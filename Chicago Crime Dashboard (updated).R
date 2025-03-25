@@ -57,12 +57,10 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       selectizeInput("community", "Communities:",
-                     choices = unique(Chicago_crime_data_enriched$COMMUNITY),
-                     # selected = unique(Chicago_crime_data_enriched$COMMUNITY),
+                     choices = sort(unique(Chicago_crime_data_enriched$COMMUNITY)),
                      multiple = TRUE),
       selectizeInput("CrimeType", "Crime Type:",
-                     choices = unique(Chicago_crime_data_enriched$Primary.Type),
-                     # selected = unique(Chicago_crime_data_enriched$Primary.Type),
+                     choices = sort(unique(Chicago_crime_data_enriched$Primary.Type)),
                      multiple = TRUE)
     ),
     
