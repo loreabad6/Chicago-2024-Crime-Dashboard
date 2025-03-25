@@ -207,7 +207,7 @@ server <- function(input, output, session){
         popup = ~paste0("<b>Crime Type:</b> ", Primary.Type , "<br>",
                         "<b>Community:</b> ", COMMUNITY, "<br>",
                         "<b>Date:</b> ", Date_only, "<br>",
-                        "<b>Police District:< /b> ", District, "<br>",
+                        "<b>Police District:</b> ", District, "<br>",
                         "<b>Time of Day:</b> ", Time_of_day, "<br>",
                         "<b>Description:</b> ", Description, "<br>",
                         "<b>Location Description:</b> ", Location.Description),
