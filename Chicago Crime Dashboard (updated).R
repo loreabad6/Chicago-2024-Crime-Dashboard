@@ -7,7 +7,7 @@ library(shiny)
 
 
 # Load Chicago Crime Data
-Chicago_crime_data <- read.csv("C:/Users/Lenovo/Desktop/Crime dashboard/Crimes_-_2001_to_Present_20250203.csv")
+Chicago_crime_data <- read.csv("Crimes_-_2001_to_Present_20250203.csv")
 
 # Remove unnecessary columns and rows with empty cells
 Chicago_crime_data_clean <- Chicago_crime_data %>%
@@ -35,7 +35,7 @@ Chicago_crime_data_clean <- Chicago_crime_data_clean %>%
     Time_of_day = ifelse(hour(Date) >= 6 & hour(Date) < 18, "Daytime", "Nighttime"))
 
 # Enrich the Chicago Crime data_clean with a dataset containing names if the 77 chicago communties
-Chicago_communities <- read.csv("C:/Users/Lenovo/Desktop/Crime dashboard/Chicago communities.csv")
+Chicago_communities <- read.csv("Chicago communities.csv")
 
 # Rename Area_Numbe to community.area in Chicago_communities, so that the two tables can have an index number with the same name.
 Chicago_communities <- Chicago_communities %>%
@@ -58,11 +58,11 @@ ui <- fluidPage(
     sidebarPanel(
       selectizeInput("community", "Communities:",
                      choices = unique(Chicago_crime_data_enriched$COMMUNITY),
-                     selected = unique(Chicago_crime_data_enriched$COMMUNITY),
+                     # selected = unique(Chicago_crime_data_enriched$COMMUNITY),
                      multiple = TRUE),
       selectizeInput("CrimeType", "Crime Type:",
                      choices = unique(Chicago_crime_data_enriched$Primary.Type),
-                     selected = unique(Chicago_crime_data_enriched$Primary.Type),
+                     # selected = unique(Chicago_crime_data_enriched$Primary.Type),
                      multiple = TRUE)
     ),
     
